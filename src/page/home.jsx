@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { json } from 'react-router-dom';
 
 function Home() {
-  const [user, setUser] = useState(null);
-
+  const [user, setUser] = useState([]);
+{/*Hook Api get data*/}
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch('https://jsonplaceholder.typicode.com/users');
-      result.json().then(json=>{setUser(json)}
+      const data = await result.json();
+      setUser(data);
+      }
 
-      )}
     fetchData();
   }, []);
-
+console.log(user)
   return (
     <div>
       <h1>HomePage</h1>
       <p>Welcome to Webapp</p>
-      {}  
+      <ul>
+          {user.map(user=>(
+            <ul key={user.id} >
+              <li>{user.name}    Email :{user.email}</li>
+            </ul>
+          )
+          )}
+      </ul>  
     </div>
   );
 }
