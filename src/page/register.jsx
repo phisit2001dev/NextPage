@@ -21,9 +21,9 @@ function Register() {
 
   return (
     <div>
-      <Grid container justifyContent="center" style={{ minHeight: '100vh',paddingTop:'10px' }}>
-        <Grid item xs={6}>
-          <Paper elevation={20} style={{ padding: "10px", width: "100%", textAlign: "center" }}>
+      <Grid container justifyContent="center" style={{ minHeight: '100vh',paddingTop:'50px' }}>
+        <Grid>
+          <Paper elevation={20} style={{ padding: "20px", width: "100%",textAlign:"center" }}>
             <h2>Register Now</h2>
             <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <TextField label="Email" id="email" {...register('email')} />

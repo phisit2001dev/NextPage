@@ -20,7 +20,7 @@ console.log(user)
       <ul>
           {user.map(user=>(
             <ul key={user.id} >
-              <li>{user.name}    Email :{user.email}</li>
+              <li>{user.name}  Email :{user.email}</li>
             </ul>
           )
           )}
